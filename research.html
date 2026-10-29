@@ -1,0 +1,385 @@
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title>Jianhan Chen Research Group</title>
+<!-- Original:  William Rozell Jr (elranzer@nospam.com ) -->
+<!-- Web Site:  http://www.elranzer.com -->
+<script LANGUAGE="JavaScript">
+var user;
+var domain;
+var suffix;
+function jemail(user, domain, suffix){
+document.write('<a href="' + 'mailto:' + user + '@' + domain + '.' + suffix + '">' + user + '@' + domain + '.' + suffix + '</a>');
+}
+</script>
+</head>
+<id="top">
+<body bgcolor="#FFFFFF">
+<table width=98% align=left><tbody><tr><td>
+<!-- begin content -->
+<!-- common header -->
+<TABLE BORDER="0" width="100%" align=center>
+  <TR> 
+  <td align=left width=188><a href="http://www.umass.edu">
+      <image height=54 border=0 src="images/umass-logo2.png"></a></td>
+  <td align=left width=600><FONT style="font-family: verdana;" size="+2"><b>Jianhan Chen Research Group</b></font><br>
+    <FONT style="font-family: verdana;">Computational Biophysics and Biomaterials</font><br></td> 
+<td></td>
+  </TR>
+</TABLE>
+<hr width=100% height=1 noshade size=1 align=left>
+
+<table cellspacing="0" cellpadding="0">
+<tr valign=top><td width=1>
+
+<td align=left>
+<table width="138" callspacing=0 cellpadding=8>
+<tbody>
+<tr align="center" valign=center><td bgcolor="#881c1c">
+    <font style="font-family: verdana;">
+      <a href="main.html" style="color: #ffffff">Home</font></a></td></tr>
+<tr align="center" valign=center><td bgcolor="#881c1c">
+    <font style="font-family: verdana;">
+      <a href="papers.html" style="color: #ffffff">Publications</a></td></tr>
+<tr align="center" valign=center><td bgcolor="#881c1c">
+    <font style="font-family: verdana;">
+      <a href="research.html" style="color: #ffffff">Research</a></td></tr>
+<tr align="center" valign=center><td bgcolor="#881c1c">
+    <font style="font-family: verdana;">
+      <a href="teaching.html" style="color: #ffffff">Teaching</a></td></tr>
+<tr align="center" valign=center><td bgcolor="#881c1c">
+    <font style="font-family: verdana;">
+      <a href="people.html" style="color: #ffffff">People</a></td></tr>
+<tr align="center" valign=center><td bgcolor="#881c1c">
+    <font style="font-family: verdana;">
+      <a href="news.html" style="color: #ffffff">News</a></td></tr>
+<tr align="center" valign=center><td bgcolor="#881c1c">
+    <font style="font-family: verdana;">
+      <a href="links.html" style="color: #ffffff">Links</a></td></tr>
+</tbody>
+</table>
+</td><td width=25><td align=left valign=top>
+<table><tr><td></td></tr></table>
+<!-- end of common headers -->
+
+<!--------begin text ----------->
+<!------- ADD YOUR CONTENT BELOW ----------->
+<!---------------------------------------------------------->
+
+Our general interests are mainly in the development of multi-scale
+moldels and advanced sampling methods, driven by the study of
+biomolecular structure, dynamics and function in biology and 
+medicine. A particular emphasis is on understanding how
+intrinsic disorder of proteins mediates function and how such
+functional mechanisms may be altered in human diseases. Another
+focus is integrating simulation and experiemnt to understand the
+mechanism and control of large-scale conformational transitions in
+functional proteins and protein complexes including transmenbrane ion
+channels and transporters.  We have recently became very interested in
+studying the driving forces, properties and mechanisms of protein and
+nucleic acid condensates. Our research has been supported by NSF, NIH,
+AHA, and various local and state funding agencies.
+
+<p><table><tr>
+<td align=center>
+<image width=298 src="research/research-wordcloud-2025.png">
+</td>
+<td width=600>
+<b>Major active research areas in the lab include:</b>
+<ol>
+  <li><a href=#top1>
+      Multi-scale methods for simulating dynamic proteins, RNAs and
+      DNAs</a>
+  <li><a href=#top2>
+      Biomolecular condensates: driving forces, mechanism and
+      properties</a>
+  <li><a href=#top3>
+      Intrinsically disordered proteins: structure, function and
+      disease</a> 
+  <li><a href=#top4>
+      Gating and pore-sensor coupling mechanisms of channel
+      proteins</a>
+  <li><a href=#top5>
+      Physics-augmented machine learning forprotein function and
+      dynamics</a> 
+  <li><a href=#top6>
+      Computational modeling and design of biomimetic materials</a>  
+</ol>      
+</td>
+</tr></table>
+
+<p id=top1><font style="color: #0066cc">
+<b>1. Multi-scale methods for simulating dynamic proteins, RNAs
+  and DNAs</b> 
+</font>
+
+<table><tr><td>
+A primary focus of our research is to develop efficient physics-based
+  models of biomolecules for describing their conformational 
+  equilibria at atomistic and coarse-grained (CG) scales.  All models
+  have been distributed in the widely available CHARMM/OpenMM software
+  packages.<br> 
+
+ <p align=justify><div style="float:right;">
+ <image style="border: 5px white solid;" width=318
+	src="research/solvent.jpg"></div>
+
+ <u>Atomistic imiplicit solvent protein force fields</u>:
+  the mean influence of solvent can be captured through direct
+  estimation of the solvation free energy, reducing the system size
+  ~10-fold. Implicit solvent is considered a  highly desirable
+  alternative to traditional explicit solvent. We 
+  were among the first to demonstrate that many limitations of the
+  <b>generalized Born (GB)</b> implicit solvent could be addressed by
+  careful parameterization of physical parameters (e.g., atomic input
+  radii) together with the underlying protein force field (JACS 2006;
+  JCC 2017). We exploited enhanced sampling techniques and GPU
+  acceleration (Biomolecules 2021; see below) to 
+  simulate conformational equilibria of carefully chosen model
+  peptides to achieve sufficient cancellation of errors, a strategy
+  has now become a standard practice in optimization of implicit as
+  well as explicit solvent  protein force fields.
+
+   </td></tr> <tr><td>
+       
+ <p align=justify><div style="float:right;">
+<image style="border: 5px white solid;" width=338
+src="research/cgmodels.jpg"></div>
+<u>Intermediate resolution coarse-grained models</u>: Efficient
+  coarse-grained (CG) models are often necessary to reach the length 
+  and time scales of large-scale transitions, dynamic interactions and
+  phase transitions. The resolution in CG representation is critical for
+  adequate description of major driving forces underlying the system
+  of interest. We have developed a <b>hybrid resolution (HyRes)</b>
+   protein model for reliable description of local and long-range
+   structures of disordered proteins (PCCP 2017; JCIM 2022). The
+   backbone is represented at all-atom level, to capture
+   backbone interactions and transient structures, and side chains are
+   represented at intermediate resolution, allowing 
+  semi-quantitative description of transient long-range orders.  HyRes
+  has demonstrated successes in modeling dynamic protein interactions
+  as well as phase separation (see below). We are also developing
+  an <b>intermediate resolution model for condensates of RNAs
+    (iConRNA)</b> that can capture key local and long-range structure 
+  features of dynamic RNAs and simulate their spontaneous phase
+  transitions with Mg2+ (PNAS 2025). iConRNA successfully
+   recapitulates experimentally observed lower critical solution
+   temperature (LCST) phase separation of model RNAs, and critically,
+   the nontrivial dependence on sequence, length, concentration, and
+   Mg2+ level. 
+
+   </td></tr> <tr><td>
+       
+<p align=justify><div style="float:right;">
+<image style="border: 5px white solid;" width=318
+src="research/mses-tre.jpg"></div>
+<u>Multi-scale enhanced sampling (MSES)</u>: Sufficient sampling
+  of relevant biomolecular conformations is crucial for achieving
+  quantitative and predictive simulations. We recently developed an
+  effective approach where efficient CG models are coupled with
+  atomistic ones to dramatically accelerate sampling at atomistic
+  level. The bias from the coupling is removed by Hamiltonian replica
+  exchange, thus allowing one to benefit simultaneously from faster
+  transitions of CG modeling and accuracy of atomistic force fields.
+  Initial application of MSES to nontrivial beta-hairpins shows that
+  MSES is up to >100-fold more efficient than temperature replica
+  exchange (T-RE). MSES is highly tunable, scalable to larger
+  proteins, and relatively robust against artifacts of the CG model
+  without the later dictating the conformational
+  diffusion. Furthermore, MSES does not require pre-specified reaction 
+  coordinates or modifications to the atomistic 
+  energy function. Further development of MSES is currently a key area
+  of focus for research in our lab. 
+
+ </td></tr></table>
+  
+<p><div style="float:right;">
+<image style="border: 8px white solid;" width=238
+       src="research/condensate.gif">
+<center><font size=-1>
+  (Spontaneous phase separation of GY23<br>
+  Zhang et al, JACS 2024)</font></center>
+  </div>
+
+<font style="color: #0066cc">
+<p id=top2><b>2. Biomolecular condensates: driving forces, mechanism and properties</b>
+</font>
+
+<p>Biomolecular condensates form and dissolve through spontaneous phase
+  separation, driven primarily by dynamic, multivalent biomolecules
+  such as RNAs and intrinsically disordered proteins (IDPs). These
+  condensates play crucial roles in a myriad of cellular processes,
+  including RNA storage and processing, stress response, metabolism,
+  and cellular signaling. Efficient coarse-grained (CG) models are
+  required to reach the length and time scales of 
+  biomolecular phase transitions; they have been instrumental in
+  working hand-in-hand with theory and experiment to elucidate the
+  mechanism and regulation of the phase transition. Moving beyond the
+  popular one-bead per residue (or nucleotide) models, we are develop
+  intermediate resolution CG models such as HyRes and iConRNA (and
+  iConDNA) (JACS 2024; PNAS 2025) to achieve a superior balance
+  between computational efficiency and ability to capture the
+  interplay of diverse interactions and transient structures in
+  simulating protein and RNA dynamics and phase separation. Integrated
+  with atomistic simulations and experimental studies, we aim to
+  understand the driving forces and control of biomolecular
+  condensates as well as the properties and interaction of the
+  condensate with various small and macro-molecules in biology and
+  biomedical engineering.  
+  
+<Font style="color: #0066cc">
+<p id=top3><b>3. Intrinsically disordered proteins: structure, function and disease</b>
+</font>
+
+<p><div style="float:right;">
+<image style="border: 8px white solid;" width=318
+  src="research/p27folding-toc.jpg"><br>
+<center><font size=-1>
+  (Electrostatically accelerated coupled bindign and folding<br>
+  of p27, Ganguly et al., JMB 2012)<br></font></center>
+</div>
+  Intrinsically disordered proteins (IDPs) are an important newly
+  recognized class of functional proteins that rely on a lack of stable
+  structures for function. They are highly abundant, play fundamental
+  roles in biology, and are extensively involved in human
+  diseases. We have been able to leverage our expertise
+  in advanced sampling, implicit solvent and NMR, and make progresses
+  toward establishing an effective computational framework for
+  reliable atomistic simulations of IDPs, and applying it to
+  understand the conformational properties of several IDPs and
+  determine how these properties may mediate IDP interaction and
+  regulation. A key lesson from our studies is that, although
+  preformed structures frequently exist in unbound IDPs, regulatory
+  IDPs tend to follow induced-folding like mechanisms. We 
+  have shown that the somewhat surprising prevalence of
+  induced folding in IDPs is likely due to the constraint of fast
+  association required for cellular signaling and
+  regulation. Combining coarse-grained simulations and experiments, we
+  have further demonstrated that facile recognition of IDPs often involves a
+  novel electrostatically accelerated encounter and folding mechanism,
+  where long-range electrostatic forces not only accelerate protein
+  encounter, but also promote folding-competent encounter topologies
+  to enhance the efficiency of IDP folding upon encounter. 
+
+<p>Besides efforts to understand the physical principles of IDP structure
+  and interaction, we have also been focusing on studies of the
+  structure-function-disease relationship of several important IDPs
+  including Bcl2 family proteins and tumor suppressor p53. In
+  particular, p53 is the most frequently mutated protein in 
+  human cancers. Clinical studies have shown that the type of p53
+  mutation can be linked to cancer prognosis, response to treatment,
+  and patient survival. It is thus crucial to understand how various
+  mutations affect p53 at the molecular level, so as to understand the
+  biological outcomes and assess potential cancer intervention
+  strategies. The intrinsically disordered N-terminal transactivation
+  domain (TAD), in particular, is essential for p53's interactions
+  with multiple signaling networks that mediate the cellular response
+  to genotoxic stresses. We are combinging atomistic simulations, NMR
+  and other biophyscial approaches to determine the structural and
+  functional consequences of numerous cancer-associated mutations in
+  p53-TAD. 
+
+ <font style="color: #0066cc">
+<p id=top4><b>4. Gating and pore-sensor coupling mechanisms of channel proteins. </b>
+</font>
+
+<p><div style="float:right;">
+<image style="border: 8px white solid;" width=288
+  src="research/hbk_pc.jpg"></div>
+Ion channels facilitate the flow of ions through cell membranes via
+  opening of their pores in response to various electrical and
+  chemical signals. The transmembrane pore in ion channels generally
+  contain structures that control the types of permeating ions, known
+  as the selectivity filter, and those that open and close to control
+  the flow of ions, known as the gate. Upon sensing  physiological
+  stimulations, the channel proteins change conformation to open the
+  gate and allow ion passage. In collaboration with various structural
+  biology and electrophysiology labs, we combine atomistic 
+  simulations and biophysical experiments to understand the gating and
+  regulation of various ion channels and transporters including
+  calcium ativated potassium (BK) channels, TMEM16 ion channel and
+  lipid scramblase, and TRP family ion channels. An important recent
+  discovery is how hydrophobic dewetting of the inner pore provides a
+  novel gating mechansim in BK and TRPV4 channels. 
+ 
+<font style="color: #0066cc">
+<p id=top5><b>5. Physics-augmented machine learning for 
+    protein function and dynamics</b>
+    </font>
+
+<p><div style="float:right;">
+<image style="border: 8px white solid;" width=298
+       src="research/bkpredictor.jpg">
+  <center><font size=-1>
+  (Reliable prediction of BK gating voltage)</font></center>
+  </div>
+Advances in GPU computing, sampling algorithms and empirical force
+fields have continued to improve the ability of molecular simulations
+to generate vast amount of quantitative data on biomolecular structural,
+dynamic and energetic properties at atomistic details and up to
+micorsecond timescales. Yet, these simulations remain far too short
+to reach functional timescales, and reliable extraction of functional
+  mechanism remains a grant challenge in computational 
+biophysics. There is an urgent need and exciting opportunity to  
+leverage advances in data sciences to address this challenge. In
+particular, large amounts of functional data have also accumulated for
+many important proteins that probe how function may be perturbed by
+mutation, binding, temperature etc. The molecular properties derived
+from modeling and simulation should provide the physical basis of the observed
+functional outputs. The bottleneck here is that the correlation is
+complex, nonlinear and highly nontrivial to recover. We are interested
+in learning how to integrate informational and
+statistical approaches with molecular modeling and simulation to
+reliably reconstruct the complex correlation between fundamental
+molecular properties and functional outputs, as well as to inform what
+and how new calculations and experiments should be performed such as
+to iteratively improve the quality of the reconstruction (e.g., PLoS
+Comput Biol 2023). We are also interested in designing and training
+generative models for disordered protein ensembles based on
+  simulation, sequence evolution and structure database.
+
+<font style="color: #0066cc">
+<p id=top6><b>6. Computational modeling and design of biomimetic materials</b> 
+</font>
+
+<p><div style="float:right;">
+<image style="border: 8px white solid;" width=248
+  src="research/bapc_toc.jpg"></div>
+Multi-scale modeling is a powerful approach to assist the
+  design and characterization of novel biomimetic materials, including
+  a new class of self-assembling branched amphiphilic peptide capsules
+  (BAPCs) (Langmuir 2016). These vesicles have unusual but highly
+  desirable properties that could address the shortcoming of
+  lipid-based carriers. These short vesicle-forming peptides (15-23
+  residues) can be synthesized economically and assembled easily by
+  users. In collaboration with the Thai lab at UMass, we are designing
+  synthetic polymers for protein binding and sensing. These polymers
+  are inspired by intrinsically disordered proteins that nature has
+  evolved for versatile protein recognition and regulation. We are
+  particularly interested in developing machine-learning-based design
+  methods leveraging chemical and physical data and molecular modeling. 
+
+<p>Want to find out more about our research? Check out our latest
+  publications, or, simply drop by if you can! We are in LSL S(outh)585.
+
+<p> <a href=#top>Back to Top</a>
+<!---------------------------------------------------------->
+<!------- ADD YOUR CONTENT ABOVE ----------->
+<!--------end text ----------->
+</td></tr>
+</table>
+<!-- signature -->
+<!-- signature -->
+<hr width=100% height=1 noshade size=1 align=left>
+<center><font size=-1 face="Times New Roman">
+<script LANGUAGE="JavaScript">jemail("jianhanc", "umass", "edu");</script> | LSL S585 |
+<a href="http://www.chem.umass.edu">Chemistry</a> |
+<a href="http://www.umass.edu/ials">IALS</a> |
+<a href="http://www.umass.edu">UMass Amherst</a>
+</font></center>
+
+<!-- end of content -->
+</tr></td></table>
+</body>
+</html>
+

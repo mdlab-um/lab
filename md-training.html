@@ -1,0 +1,616 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html">
+<title>Jianhan Chen Research Group</title>
+<!-- Original:  William Rozell Jr (elranzer@nospam.com ) -->
+<!-- Web Site:  http://www.elranzer.com -->
+<script LANGUAGE="JavaScript">
+var user;
+var domain;
+var suffix;
+function jemail(user, domain, suffix){
+document.write('<a href="' + 'mailto:' + user + '@' + domain + '.' + suffix + '">' + user + '@' + domain + '.' + suffix + '</a>');
+}
+</script>
+</head>
+<body bgcolor="#FFFFFF">
+<table width=98% align=left><tbody><tr><td>
+<!-- begin content -->
+<!-- common header -->
+<!--#include file="commonheader.html" -->
+<TABLE BORDER="0" width="100%" align=center>
+  <TR> 
+  <td align=left width=188><a href="http://www.umass.edu">
+      <image height=54 border=0 src="images/umass-logo2.png"></a></td>
+  <td align=left width=600><FONT style="font-family: verdana;" size="+2"><b>Jianhan Chen Research Group</b></font><br>
+    <FONT style="font-family: verdana;">Computational Biophysics and Biomaterials</font><br></td> 
+<td></td>
+  </TR>
+</TABLE>
+<hr width=100% height=1 noshade size=1 align=left>
+
+<table cellspacing="0" cellpadding="0">
+<tr valign=top><td width=1>
+
+<td align=left>
+<table width="138" callspacing=0 cellpadding=8>
+<tbody>
+<tr align="center" valign=center><td bgcolor="#881c1c">
+    <font style="font-family: verdana;">
+      <a href="main.html" style="color: #ffffff">Home</font></a></td></tr>
+<tr align="center" valign=center><td bgcolor="#881c1c">
+    <font style="font-family: verdana;">
+      <a href="papers.html" style="color: #ffffff">Publications</a></td></tr>
+<tr align="center" valign=center><td bgcolor="#881c1c">
+    <font style="font-family: verdana;">
+      <a href="research.html" style="color: #ffffff">Research</a></td></tr>
+<tr align="center" valign=center><td bgcolor="#881c1c">
+    <font style="font-family: verdana;">
+      <a href="teaching.html" style="color: #ffffff">Teaching</a></td></tr>
+<tr align="center" valign=center><td bgcolor="#881c1c">
+    <font style="font-family: verdana;">
+      <a href="people.html" style="color: #ffffff">People</a></td></tr>
+<tr align="center" valign=center><td bgcolor="#881c1c">
+    <font style="font-family: verdana;">
+      <a href="news.html" style="color: #ffffff">News</a></td></tr>
+<tr align="center" valign=center><td bgcolor="#881c1c">
+    <font style="font-family: verdana;">
+      <a href="links.html" style="color: #ffffff">Links</a></td></tr>
+</tbody>
+</table>
+</td><td width=25><td align=left valign=top>
+<table><tr><td></td></tr></table>
+
+<!-- end of common headers -->
+<!--------begin text ----------->
+<!------- ADD YOUR CONTENT BELOW ----------->
+<!---------------------------------------------------------->
+<a nam="top">
+<center>
+<h3>A Practical Guide to Biomolecular Simulation and CHARMM</h3>
+assembled by Jianhan Chen for internal use <br>
+All rights reserved, 2009
+</center>
+
+<p><b><u>Overview:</u></b> Effective biomolecular simulation requires
+  a range of background that might be grouped into four key areas:
+<ol>
+<li><a href="#linux">Linux/Unix operation system</a>: scripting
+  languages and common tools
+<li><a href="#mm">Molecular mechanics</a>: theories and algorithms
+<li><a href="#charmm">CHARMM</a>: principles and practice
+<li><a href="#science">The science</a>: chemistry, physics and biology
+  (aka: biophysics and biochemistry).
+</ol>
+Items 1 and 3 are important for correct and efficient design and
+implementation of computational experiments (i.e., simulations) and
+subsequent analysis. The importance of these technical aspects can be easily 
+over-emphasized, especially for beginners. However, they are far from sufficient 
+for successful research in biomolecular modeling. Instead, in-depth
+understanding of the simulation methodologies (both pros and cons), and particularly, 
+<i>the science</i>, is critical. Building up the necessary background in all these 
+areas takes time. It demands diligence and persistence, and benefits from good guidance. 
+
+<p> <u>To young graduate students</u> (and postdoctoral
+    scholars new to the field): please remember to read papers, tons
+    of them! <i>You should feel bad if you are not reading as least a
+    dozen of papers every week!</i> Literature has remained the main
+    source for up-to-date information on state-of-the-art of virtually
+    every research subject. <i>This guide focuses heavily on the
+    technical aspects (which ironically are "less" important as stated
+    above), and only touches on some basic methodological and
+    scientific aspects</i>. 
+
+<p>In the following, I will provide/assemble online and local
+  materials for each of the items listed above. While this document
+  will serve as a reasonable starting point for learning and is a good
+  reference, I want to remind you that <a href="http://www.google.com"
+  target=_new>Google</a>/Internet is your best friend when it comes to
+  specific technical questions. As you will notice, this guide relies
+  heavily on available resources on the Internet.
+
+<a name="linux">
+<h3>1. Linux/Unix & Scripting</h3>
+This is clearly the easiest item on the to-learn list. Have a somewhat
+extensive knowledge of the inner work of Linux OS and good scripting
+ability will go a long way in making your life much easier and more
+efficient. Following is almost a "minimal" set of skills that you
+might want to learn how to use with little friction in your daily
+work.
+
+<p><b>1.1. Linux/Shell basics</b>:
+Google for "introduction to unix" etc will find you tons of
+  tutorials. A few good ones include:<br> 
+
+<ul>
+<li>Unix Tutorial for Beginners:
+  <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/"
+  target=_new>http://www.ee.surrey.ac.uk/Teaching/Unix/</a> 
+<li>Unix tutorial:
+  <a href=http://www2.ocean.washington.edu/unix.tutorial.html
+  target=_new>http://www2.ocean.washington.edu/unix.tutorial.html</a>
+<li>Getting started with Linux: 
+  <a href=http://www.linux.org/lessons/beginner/toc.html
+   target=_new>http://www.linux.org/lessons/beginner/toc.html</a>
+<li>Linux 101 (on various topics):
+  <a href=http://www.ahinc.com/linux101/linuxguidelines.htm
+  target=_new>http://www.ahinc.com/linux101/linuxguidelines.htm</a>
+<br><br>
+<li>The C Shell Tutorial:
+  <a href="http://www.eng.hawaii.edu/Tutor/csh.html"
+   target=_new>http://www.eng.hawaii.edu/Tutor/csh.html</a>
+<li>Getting started with BASH:
+  <a href="http://www.hypexr.org/bash_tutorial.php"
+   target=_new>http://www.hypexr.org/bash_tutorial.php</a> <br><br>
+
+<li>Csh (quiet comprehensive!):
+  <a href="http://www.grymoire.com/Unix/Csh.html"
+   target=_new>http://www.grymoire.com/Unix/Csh.html</a>
+<li>BASH Programming (quite extensive!)
+  <a href="http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html"
+  target=_new>http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html</a>
+</ul>
+
+<p><b>1.2. awk and sed</b>: These are powerful scripting tools for
+  text processing and simple data analysis. Even learning to use their
+  basic functionalities can make your life so much easier (this is where
+  my awk/sed skill level is at; I wish that myself were more proficient with
+  awk/sed).<br> 
+
+<ul>
+<li>An Awk Primer:
+  <a href="http://www.vectorsite.net/tsawk.html"
+  target=_new>http://www.vectorsite.net/tsawk.html</a> 
+<li>The GNU Awk User's Guide (comprehensive):
+  <a href="http://www.gnu.org/software/gawk/manual/gawk.html"
+  target=_new>http://www.gnu.org/software/gawk/manual/gawk.html</a>
+<li>AWK Language Programming
+  <a href="http://www.math.utah.edu/docs/info/gawk_toc.html"
+  target=_new>http://www.math.utah.edu/docs/info/gawk_toc.html</a> 
+<p>
+<li>Sed - An Introduction and Tutorial:
+  <a href=http://www.grymoire.com/Unix/Sed.html
+  target=_new>http://www.grymoire.com/Unix/Sed.html</a>
+<li>Sed Tutorial
+  <a href=http://www.panix.com/~elflord/unix/sed.html
+  target=_new>http://www.panix.com/~elflord/unix/sed.html</a>
+</ul>
+
+<p><b>1.3. Perl and Python</b>: These are much more powerful
+  high-level programming languages that can virtually do
+  anything. Their scopes can not really be covered by short tutorials,
+  but you might find them useful to get started nonetheless. 
+
+<ul>
+<li>Picking up Perl (where I "learned" Perl in a day):
+  <a href=http://www.ebb.org/PickingUpPerl/pickingUpPerl.html
+  target=_new>http://www.ebb.org/PickingUpPerl/pickingUpPerl.html</a>
+<li>PERL (concise introduction):
+  <a href="http://www-cgi.cs.cmu.edu/cgi-bin/perl-man"
+  target=_new>http://www-cgi.cs.cmu.edu/cgi-bin/perl-man</a> 
+<li>Perl Doc (comprehensive reference with tutorials):
+  <a href=http://perldoc.perl.org/
+  target=_new>http://perldoc.perl.org/</a>
+<li>Practical Perl Programming (an online book):
+  <a href=http://www.cs.cf.ac.uk/Dave/PERL/perl_caller.html
+  target=_new>http://www.cs.cf.ac.uk/Dave/PERL/perl_caller.html</a>
+<br><br>
+<li>Python: I do not know python myself, but it is supposed to be even
+  better than Perl). Check it out yourself if you are interested. It
+  appears that knowing either Perl or Python will get most things done
+  in similar fashions. Python.org (<a href=http://www.python.org/doc/
+  target=_new>http://www.python.org/doc/</a>) has tutorials, documents
+  and forums to get you started.
+</ul>
+
+<p><b>1.4. Other commonly used tools</b>: mostly for editing files
+  and plotting data. All links provided contain tutorials as well as
+  documents. All programs have built-in manual and help
+  functionalities, which are often useful. Software for molecular
+  visualization is introduced in <a href="#mm">Molecular Mechanics</a>
+  section (including rasmol, VMD, etc).
+
+<ul>
+<li><b>emacs</b>: one of the key editors on Linux/Unix; interactive with many
+  convenient features; recognizes many programming languages and
+  nicely color keywords. Here are some nice tutorials:
+  <a href=http://www2.lib.uchicago.edu/~keith//tcl-course/emacs-tutorial.html
+  target=_new>An introduction/overview</a>,
+  <a href=http://www.gnu.org/software/emacs/tour/ target=_new>A Guided
+  Tour</a>, and <a href=http://jeremy.zawodny.com/emacs/emacs.html
+  target=_new>Beginner's HOWTO</a>. Emacs does many things and the
+  <a href=http://www.gnu.org/software/emacs/manual/html_node/emacs/index.html 
+  target=_new>GNU Emacs Manual</a> can be dazzling. Try Google to find
+  answers to specific questions.
+
+<li><b>vi</b>: one of the oldest and most popular editors with many
+  modern twists. very fast, especially if you know all the
+  keyboard short-cuts. Google for tutorials yourself.  
+
+<li><b>gnuplot</b>: 1D and 2D plots (convenient and fast, must learn!): 
+  <a href="http://www.gnuplot.info/"
+  target=_new>http://www.gnuplot.info/</a>. Note that gnuplot also
+  contains a very powerful built-in help function. To get help on any
+  command or subcommand, simply type "help command_name" at gnuplot
+  prompt.
+
+<li><b>Xmgrace</b>: 1D plotting tool (interactive):
+  <a href="http://plasma-gate.weizmann.ac.il/Grace/"
+  target=_new>http://plasma-gate.weizmann.ac.il/Grace/</a>
+<br><br>
+
+<li>LaTex: I used to use it a lot. But I am not sure a beginner wants
+  to get into this without strong reasons.
+</ul>
+
+<p><a href="#top">Back to Top</a></p>
+<a name="mm">
+<h3>2. Molecular Mechanics</h3>
+
+<b>2.1. Basic principles:</b> The basic idea of molecular mechanics
+(MM) is very simple: the molecule  
+consists of classical particles (e.g., atoms with well defined mass, 
+positions and velocities at any given moment of time). There is no
+explicit electron like in quantum mechanics ("reality") and no
+chemistry. The interactions between these classical particles are
+generally divided into bonded and non-bonded interactions depending on
+whether the interacting particles are linked by no greater than three
+chemical bonds. Such simplification requires heavy parameterization based
+on both experimental data and quantum mechanical calculations (which
+leads to so-called <i>empirical force fields</i>), but allows description of
+large molecules like proteins. The motion of classical particles is
+described by the Newton's Equations of Motion, and this is the basis of
+so-called molecular dynamics (MD) simulations (<i>conformational
+sampling</i>). Force field and sampling are two basic components of
+biomolecular modeling. The basic principles of MM are so simple, such
+that educated students can write an MD code in less than an
+hour. Nonetheless, substantial complications do arise in  practical
+simulation of biomolecules. These complications mostly have to do with
+achieving sufficient accuracy and computational efficiency such that
+meaningful biochemical and biophysical questions can be
+addressed.
+
+<p><b>2.2. Textbooks and online readings:</b>
+A few "classical" textbooks expand on basic MM/MD theories and
+algorithms, including <i>"Understanding Molecular Simulations"</i> by
+Frankel and Smit, <i>"Computer Simulations of Liquids"</i> by Allen
+and Tildesley, and <i>"Proteins: A Theoretical Perspective of
+Dynamics, Structure and Thermodynamics"</i> by Brooks, Karplus and
+Pettitt. These books are also useful for understanding the theories
+behind the interpretation of simulation trajectories.  <i>Statistical
+mechanics</i> (or statistical thermodynamics) links the simulated
+microscopic ensembles to macroscopic measurables and provides the
+basis for most common analysis of classical simulations. The classical
+textbooks on statistical mechanics include McQuarrie's <i>"Statistical
+    Mechanics"</i> (comprehensive and in-depth) or an
+expanded/simplified version for undergraduate-level
+courses, <i>"Physical Chemistry: A Molecular Approach" </i> by
+McQuarrie and Simon. David Chandler's short book on <i>"Introduction
+to Modern Statistical Mechanics"</i> is easy to read but yet with good 
+breadth and depth. I have all these books in my office for loan. Some
+interesting overviews can also be found online, such as: (if you can
+  only read one of them, read the first one)
+
+<ul>
+<li>Molecular Dynamics Simulations and CHARMM:
+  <a href=http://www.ch.embnet.org/MD_tutorial/
+  target=_new>http://www.ch.embnet.org/MD_tutorial/</a>
+<li>Molecular dynamics from Wikipedia:
+  <a href=http://en.wikipedia.org/wiki/Molecular_dynamics
+  target=_new>http://en.wikipedia.org/wiki/Molecular_dynamics</a>
+<li>A molecular dynamics primer (by Furio Ercolessi)
+  <a href=http://www.ud.infn.it/~ercolessi/md/md/md.html
+  target=_new>http://www.ud.infn.it/~ercolessi/md/md/md.html</a>
+<li>Introduction to Macromolecular Simulation (by Peter Steinback)
+  <a href="http://cmm.info.nih.gov/intro_simulation/"
+  target=_new>http://cmm.info.nih.gov/intro_simulation/</a>
+</ul>
+
+<b>2.3. Lecture notes:</b>
+MM and MD are also common topics covered in high-level undergraduate
+and graduate courses. For example, you can obtain copies of the
+<a href=teaching.html target=_new>BIOCH 590 lecture notes</a> that I
+  prepared earlier this year. The set of notes provides an overview of
+  biophysical studies of macromolecules, classical and statistical
+  thermodynamics, molecular interactions, and classical molecular
+  modeling. You will need a physical chemistry or biophysics textbook
+  to expand on the details if you are not familiar with the subjects.
+
+<ul>
+<li>Introduction to biological macromolecules 
+(<a href="teaching/bioch590/1-Intro.pdf">PDF</a>, 4.0 MB)
+<li>Classical and statistical thermodynamics; Thermochemistry
+(<a href="teaching/bioch590/2-thermo-statmech.pdf">PDF</a>, 2.1 MB)
+<li>Molecualr interactions and biomolecular structures; Computer modeling
+(<a href="teaching/bioch590/3-interactions.pdf">PDF</a>, 6.1 MB)
+</ul>
+
+<p><b>2.4. Recommended/required papers:</b>
+As mentioned above, substantial complications arise for accurate
+  and efficient modeling of large systems and/or biological processes
+  that occur on timescales out of the direct reach of MD
+  simulations. Techniques such as implicit solvent, advanced sampling,
+  free energy simulation, transition path sampling, coarse-graining
+  are best described by the literature. A few "classical"
+  reviews/articles are provided below. Note that this is actually a
+  short list! They should mainly serve as your entrance points to the
+  large body of existing literature  All the PDF files can be found on 
+  <a href=http://en.wikipedia.org/wiki/Mount_McKinley
+  target=_new>mckinley</a> under the tree
+  "~jianhanc/work/tutorial/reading". 
+<p> PMID shown refers to PubMed
+  (<a href=http://www.pubmed.gov
+      target=_new>http://www.pubmed.gov</a>) ID. <b>PubMed</b> is one of the
+  two best methods of literature search, besides Web of Science
+  (<a href=http://www.isiknowledge.com
+      target=_new>http://www.isiknowledge.com</a>). <b>Web of Science</b> is
+  particularly useful for tracing research work prior to or following
+  a particular paper (through reference or citation search).
+
+<ul>
+<li><b>Empirical Force fields</b>
+  <ul>
+    <li>MacKerell, 2004 (PMID: 15264253);
+    <li>Ponder and Case, 2003 (PMID: 14631816); 
+    <li>Lazaridis and Karplus, 2000 (PMID: 10753811);
+  </ul>
+<li><b>Simulation methods</b>
+  <ul>
+    <li>JCC Special Issue on MD Packages
+  (<a href="http://www3.interscience.wiley.com/journal/112098147/issue"
+  target=_new>Vol. 26 Issue 16</a>);
+    <li>Brooks et al., 2009 (PMID: 19444816; the updated CHARMM paper);  
+    <li>Hess et al., J. Chem. Theo. Comput. (2008) (GROMACS 4 paper); 
+    <li>Tuckerman and Martyna, J. Phys. Chem. B (2000); 
+    <li>Schlick et al., J. Comput. Phys. (1999);
+    <li>Scheraga et al., 2007 (PMID: 17034338);
+    <li>Steinbach and Brooks, J. Comput. Chem. (1994); 
+  </ul>
+<li><b>Implicit solvent</b>
+  <ul>
+    <li>Simonson and Roux, 1999 (PMID: 17030302);
+    <li>Bashford and Case, 2000 (PMID: 11031278); 
+    <li>Feig and Brooks 2004 (PMID: 15093837); 
+    <li>Chen et al., 2008 (PMID: 18304802); 
+    <li>Chen and Brooks, 2008 (PMID: 18183310); 
+    <li>Chen et al., 2009 (a book chapter);
+  </ul>
+<li><b>Free energy calculation</b>
+  <ul>
+    <li>Case and Brooks, Chem. Rev. (1993); 
+    <li>Kollman, Chem. Rev. (1993); 
+    <li>Kumar et al., J. Comput. Chem. (1992,1995) (the original WHAM paper and
+  multidimensional extension); 
+    <li>Gilson et al., Biophys. J. (1997) (almost all to be known about binding affinity calculations); 
+    <li>Allen et al., 2006 (PMID 16500984: ; ion channel PMF)
+  </ul>
+<li><b>Advanced sampling</b>
+  <ul>
+    <li>Sugita and Okamoto, Chem. Phys. Lett. (1999) (original REX paper); 
+    <li>Lei and Duan, 2007 (PMID: 17382533); 
+  </ul>
+<li><b>Coarse-grained methods</b>
+  <ul>
+    <li>Klein and Shinoda, Science (2008) (part of a special series "challenges in Theoretical Chemistry"); 
+    <li>Ayton and Voth, 2009 (PMID: 19362465)
+    <li>Tozzini 2005 (PMID: 15837171);
+  </ul>
+</ul>
+
+<p><b>2.5. Molecular visualization:</b> We regularly use VMD and
+  Rasmol for molecular visualization. The main advantage of VMD is its
+  ability to play (CHARMM) trajectories and a broad spectra of
+  analysis tools that it offers (e.g., alignment and RMSD
+  evaluation). On the other hand, Rasmol is fast and more convenient
+  for quick views. A feature that I frequently use with rasmol is to
+  create plotting scripts that display the protein in desired fashion
+  with a single command. An example is given below. Note that vmd also
+  allow one to save the plotting modes by save/load states. Both vmd
+  and rasmol are free and very popular. Many useful tips/tutorials
+  exist online. Google for answers to specific questions.
+
+<ul>
+<li><b>rasmol</b>: the official site is <a href=http://rasmol.org target=_new>
+http://rasmol.org/</a>. It provides an online copy of latest
+  manual. Many useful tutorials also exist, such as
+  <a href="http://spdbv.vital-it.ch/TheMolecularLevel/RasTut/"
+  target=_new>Introduction to Molecular Modeling</a> by Gale Rhodes,
+  <a href=http://web.chemistry.gatech.edu/~williams/bCourse_Information/4581/labs/tbp/rasmol/rasmol_tbp_fset.html
+  target=_new>Rasmol Tutorial</a> by Loren Williams, and
+  <a href=http://www.biochemistry.utoronto.ca/steipe/bioinformatics/tutorials/rasmol_tutorial.html
+  target=_new>A Rasmol Tutorial</a> from the Steipe Lab. A simple
+  example of rasmol plotting script is also provided on mckinley under
+  "~jianhanc/work/tutorial/rasmol".
+<p>
+<li><b>VMD</b>: a collection of tutorials (including
+  <a href=http://www.ks.uiuc.edu/Training/Tutorials/vmd/tutorial-html/index.html
+  target=_new>the "official" one</a>) can be found at:
+  <a href=http://www.ks.uiuc.edu/Research/vmd/current/docs.html#tutorials
+  target=_new>http://www.ks.uiuc.edu/Research/vmd/current/docs.html#tutorials</a>. I
+  doubt that you will need anything else to learn VMD. VMD is
+  extremely powerful and you will need to learn Tcl/Tk scripting
+  language in order to fully explore its functionalities. Last time I
+  wrote a Tcl/Tk script was in 1999.
+</ul>
+
+<p><a href="#top">Back to Top</a></p>
+<a name="charmm">
+<h3>3. CHARMM Simulation Package</h3>
+
+<b>3.1. Overview.</b> 
+<a href=http://www.charmm.org target=_new>CHARMM</a> is one of the
+major general-purpose (bio)molecular simulation  
+packages. We mainly use CHARMM in our lab. Compared to Amber, Gromacs,
+Namd and others, CHARMM is unique in several ways. <i>First</i>, CHARMM
+provides modules that need to be "assembled" by the user in the form
+of "input scripts" to carry out simulation and analysis, while all the
+other programs pre-assemble the flows and only allow users to
+specify certain parameters (e.g., length of simulation, nonbond
+options, etc). Such a philosophy provides great flexibility and can
+be very useful in research (where we often need to carry out
+non-standard operations), but can also make it more difficult and
+error-prone for beginners. <i>Second</i>, CHARMM contains one of the
+largest collection of analysis tools. Combined with the scripting
+ability, albeit limited, CHARMM can be programmed to do seemingly
+complicated analysis with a little effort. Most other software
+require usage of a suite of independent programs to carry out
+different analysis, with the exception of NAMD/VMD. <i>Third</i>,
+CHARMM is primarily a research tool that is used and developed by many
+research groups around the world. With some training, one can easily
+modify and expand CHARMM for your specific purposes. The flip side of
+this nature is that tools in CHARMM are not all well documented or
+user friendly.
+
+<p>Frequently cited limitations of CHARMM include 1) not user friendly
+(documents difficult to read), 2) steep learning curve, and 3) does
+not scale well on multiple processors (e.g., >16 CPUs). There are
+multiple ongoing efforts to resolve all these
+limitations. Particularly in terms of CHARMM training, multiple
+workshops have been offered (e.g.,
+  <a href=http://www.mmtsb.org/workshops/mmtsb-ctbp_workshop_2009/mmtsb-ctbp_2009.html
+     target=_new>MMTSB/CTBP
+  workshops</a>) and several resources are available for providing
+examples/tutorials to get you started (e.g.,
+<a href="http://www.charmm-gui.org" target=_new>CHARMM GUI</a>,
+<a href="http://www.mmtsb.org"
+   target=_new>MMTSB</a>, <a href="http://www.charmm.org"
+   target=_new>CHARMM forum</a>). Charles Brooks III is also leading
+   an NIH-supported effort to modernize CHARMM and improve the
+   computational efficiency across the spectrum.
+
+<p>Albeit limited and often difficult to understand for beginners, I
+  strongly suggest everyone to read through the core document pages at
+  least once when learning charmm. One should also read through
+  related documents whenever learning to use new functionalities in
+  CHARMM. This habit allows one to become more familiar with what is
+  available and such familiarity will be very useful in thinking about
+  how to setup new simulations or analyze the trajectories. There are
+  many online versions of CHARMM documentation, such
+  <a href=http://brooks.chem.lsa.umich.edu/content/charmm_docs/c32docs/c32a1/index.html>this
+  one hosted in Michigan</a>. In particular, the following
+  categorized one can be very handy for beginners:
+  <a href=http://brooks.chem.lsa.umich.edu/content/charmm_docs/c32docs/c32a1/category.html>http://brooks.chem.lsa.umich.edu/content/charmm_docs/c32docs/c32a1/category.html</a>. 
+
+<p><b>3.2. Online tutorials.</b>
+There exist quite a few very useful online introductions and
+  tutorials (besides those provided in our previous workshops). I
+  recommend you read through them before you start to work on the
+  internal materials.
+
+<ul>
+<li><i>CHARMM(ing) Tutorial</i> from NIH:
+  <a href=https://www.charmm.org/wiki//index.php/CHARMM_Tutorial>
+    http://www.charmmtutorial.org/index.php/CHARMM_Tutorial</a> (One
+  of the  newer and more systematic tutorials! Nice find by Tim).
+<li><i>CHARMM Tutorial</i> by Stefan
+  Boresch: <a href=http://www.mdy.univie.ac.at/lehre/charmm/course1/course1.html
+target=_new>http://www.mdy.univie.ac.at/lehre/charmm/course1/course1.html</a>
+  (one of the better tutorials
+  with good descriptions of the basic terminology and concepts.)
+<li><i>Moecular Dynamics Simulations and CHARMM</i> by Roland Stote and
+  coworkers: <a href=http://www.ch.embnet.org/MD_tutorial/
+  target=_new>http://www.ch.embnet.org/MD_tutorial/</a> (This tutorial
+  provides a very nice theoretical introduction to molecular dynamics
+  simulations and several practical examples using the CHARMM
+  program).
+<li><i>MMTSB/CTBP Workshops</i> in
+  <a href=http://mmtsb.org/workshops/mmtsb-ctbp_2006/mmtsb-ctbp_2006.html
+     target=_new>2006</a> and
+  <a href=http://www.mmtsb.org/workshops/mmtsb-ctbp_workshop_2009/mmtsb-ctbp_2009.html
+  target=_new>2009</a> both contain (somewhat overlapping) examples of
+  MD simulation and analysis with CHARMM and MMTSB Tool Set, among
+  other things. A copy of the MMTSB/CTBP 2009 workshop is available
+  locally, besides additional examples (see below).
+</ul>
+
+<p><b>3.3. Local tutorials/examples.</b>
+In the following, I describe several internal materials for CHARMM
+   overview and tutorials. All these materials are available on our
+   mighty mckinley under tree "~jianhanc/work/tutorial/charmm". Some
+   of these tutorials have been used in previous MMTSB/CTBP
+  workshops. The list of tutorials include (among others):
+
+<ul>
+<li>charmm-vaccum: simplest MD simulation in vaccum
+<li>charmm-gb: protein simulation using GBSW implicit solvent
+<li>charmm-tip3p: making a water box, solvate the protein and run MD simulation
+<li>charmm-analysis: a set of examples and overviews of charmm
+  analysis functionalities
+<li>mmtsb-ctbp_workshop_2009: local copy of MMTSB/CTBP 2009 workshop.
+</ul>
+
+<p><b>3.4. MMTSB Tool Set:</b> the toolset provides many convenient
+  functionalities for simple analysis. The most frequently used tools
+  of MMTSB in our lab is the replica exchange simulation support
+  (aarex.pl and related tools). In  addition, we have used the tool
+  set quite extensively for clustering analysis (enscluster.pl) and pdb
+  structure manipulation (convpdb.pl). My recommendation is that try
+  to learn CHARMM well and do most of the "standard" analysis in
+  CHARMM. Use the tool set when you need to get some numbers (such as
+  RMSD between two structures) quickly. MMTSB Tool Set has some
+  reasonable documentation
+  (<a href=http://feig.bch.msu.edu/mmtsb/Main_Page
+  target=_new>http://feig.bch.msu.edu/mmtsb/Main_Page</a>). The
+  MMTSB/CTBP workshop also contains many
+  <a href=http://mmtsb.org/workshops/mmtsb-ctbp_workshop_2009/Tutorials/WorkshopTutorials_2009.html
+  target=_new>tutorials/examples</a> on how to 
+  use the tool set in various ways. Also see Michael Feig's
+  <a href=http://mmtsb.org/workshops/mmtsb-ctbp_workshop_2009/Lecture_pdf/MMTSBToolSet_MF.pdf>lecture
+  note</a> for an overview.
+
+<p><a href="#top">Back to Top</a></p>
+<a name="science">
+<h3>4. Biophysics and Biochemistry</h3>
+
+This is such a large topic and I do not even know where to start. In
+general, the papers that I give you to read at the beginning of your
+projects will be good starting points to build up the necessary
+scientific background. Your course training is also a critical
+component that builds the knowledge base of your research work. While
+the graduate program might not require you to take a large number of
+courses, I encourage to take advantage of many graduate or high-level
+undergraduate courses offered on relevant topics. This is the most
+efficient way of obtaining formal and systematic training on the
+corresponding subject matter. Based on my personal experience,
+while self-study is a critical ability in research, it is often not
+effective in terms of basic training. For example, if you want to
+learn statistical mechanics, the best way is simply to take a course
+on statistical mechanics (that is taught by a good instructor).
+Do not take your courses lightly! Take advantage of the (precious)
+opportunities to refresh, refine and expand your knowledge base.
+
+<h3>Final thoughts</h3>
+Other group members and myself are here to help you with any questions
+that you might have. We are learning together. Hopefully, it will be
+fun. If you find some new way of learning biomolecular
+modeling/CHARMM, please share with everyone. Also let me know and we
+can add them to this page. Finally, this is might a bit off topic. Our
+lab website also contains a few links  on <a href=links.html
+target=_new>How to Succeed in Graduate School</a>. Check them out in
+your free time.  
+
+<p><a href="#top">Back to Top</a></p>
+
+<!---------------------------------------------------------->
+<!------- ADD YOUR CONTENT ABOVE ----------->
+<!--------end text ----------->
+</td></tr>
+</table>
+<!-- signature -->
+<!--#include file="commonsignature.html" --> 
+<!-- signature -->
+<hr width=100% height=1 noshade size=1 align=left>
+<center><font size=-1 face="Times New Roman">
+<script LANGUAGE="JavaScript">jemail("jianhanc", "umass", "edu");</script> | LSL S585 |
+<a href="http://www.umass.edu/ials">IALS</a> |
+<a href="http://www.chem.umass.edu">Chemistry</a> |
+ <a href="http://www.umass.edu/biochem">Biochem & Mol Biol</a> |
+ <a href="http://www.umass.edu">UMass Amherst</a>
+</font></center>
+
+<!-- end of content -->
+</tr></td></table>
+</body>
+</html>
+
